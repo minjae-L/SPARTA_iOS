@@ -9,40 +9,48 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var total = 0
+    var total = 0 {
+        didSet {
+            totalLabel.text = "\(total)"
+            checkRange(num: total)
+        }
+    }
     private lazy var StackViewHeight: CGFloat = view.frame.height / 10
     
     private let totalLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "Hello"
+        lb.text = "0"
         return lb
     }()
     
-    private let plusButton: UIButton = {
+    private lazy var plusButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "plus"), for: .normal)
         btn.tintColor = .white
         btn.backgroundColor = .systemBlue
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         return btn
     }()
     
-    private let minusButton: UIButton = {
+    private lazy var minusButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "minus"), for: .normal)
         btn.tintColor = .white
         btn.backgroundColor = .systemRed
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
         return btn
     }()
     
-    private let resetButton: UIButton = {
+    private lazy var resetButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("RESET", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .systemGray
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return btn
     }()
     
@@ -85,6 +93,28 @@ class ViewController: UIViewController {
         ])
     }
     
+    @objc func plusButtonTapped() {
+        total += 1
+    }
+    
+    @objc func minusButtonTapped() {
+        total -= 1
+    }
+    
+    @objc func resetButtonTapped() {
+        total = 0
+    }
+    
+    private func checkRange(num: Int) {
+        if num == 10 {
+            self.plusButton.isEnabled = false
+        } else if num == -10 {
+            self.minusButton.isEnabled = false
+        } else {
+            self.plusButton.isEnabled = true
+            self.minusButton.isEnabled = true
+        }
+    }
     
     
     override func viewDidLoad() {
