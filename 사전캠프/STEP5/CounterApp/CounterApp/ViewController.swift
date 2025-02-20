@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     private let plusButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "plus"), for: .normal)
+        btn.tintColor = .white
+        btn.backgroundColor = .systemBlue
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
     private let minusButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "minus"), for: .normal)
+        btn.tintColor = .white
+        btn.backgroundColor = .systemRed
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -36,6 +40,8 @@ class ViewController: UIViewController {
     private let resetButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("RESET", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .systemGray
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -48,7 +54,6 @@ class ViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.addArrangedSubview(self.plusButton)
         stackView.addArrangedSubview(self.minusButton)
-        stackView.backgroundColor = .blue
         return stackView
     }()
     
@@ -60,7 +65,6 @@ class ViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.addArrangedSubview(self.innerStackView)
         stackView.addArrangedSubview(self.resetButton)
-        stackView.backgroundColor = .red
         return stackView
     }()
     
@@ -80,6 +84,8 @@ class ViewController: UIViewController {
             stackView.heightAnchor.constraint(equalToConstant: StackViewHeight)
         ])
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
