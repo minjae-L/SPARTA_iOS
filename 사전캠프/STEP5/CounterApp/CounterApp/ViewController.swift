@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var total = 0 {
+    private var total = 0 {
         didSet {
             totalLabel.text = "\(total)"
             checkRange(num: total)
