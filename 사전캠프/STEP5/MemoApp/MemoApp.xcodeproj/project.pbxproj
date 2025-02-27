@@ -15,6 +15,8 @@
 		B53255742D6EFDF80094D789 /* MemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53255732D6EFDF80094D789 /* MemoAppTests.swift */; };
 		B532557E2D6EFDF80094D789 /* MemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532557D2D6EFDF80094D789 /* MemoAppUITests.swift */; };
 		B53255802D6EFDF80094D789 /* MemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532557F2D6EFDF80094D789 /* MemoAppUITestsLaunchTests.swift */; };
+		B577DE342D6FFA400080962D /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577DE332D6FFA400080962D /* CustomTabbar.swift */; };
+		B577DE362D70021B0080962D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577DE352D70021B0080962D /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B53255792D6EFDF80094D789 /* MemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B532557D2D6EFDF80094D789 /* MemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAppUITests.swift; sourceTree = "<group>"; };
 		B532557F2D6EFDF80094D789 /* MemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B577DE332D6FFA400080962D /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		B577DE352D70021B0080962D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				B53255652D6EFDF80094D789 /* Assets.xcassets */,
 				B53255672D6EFDF80094D789 /* LaunchScreen.storyboard */,
 				B532556A2D6EFDF80094D789 /* Info.plist */,
+				B577DE332D6FFA400080962D /* CustomTabbar.swift */,
+				B577DE352D70021B0080962D /* TableViewCell.swift */,
 			);
 			path = MemoApp;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B577DE362D70021B0080962D /* TableViewCell.swift in Sources */,
+				B577DE342D6FFA400080962D /* CustomTabbar.swift in Sources */,
 				B53255612D6EFDF50094D789 /* ViewController.swift in Sources */,
 				B532555D2D6EFDF50094D789 /* AppDelegate.swift in Sources */,
 				B532555F2D6EFDF50094D789 /* SceneDelegate.swift in Sources */,

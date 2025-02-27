@@ -8,11 +8,20 @@
 import UIKit
 
 enum Constant {
+    
+    // 추가버튼 SF Symbol 변수명
     static var ADD_BUTTON_NAME: String {
         return "square.and.pencil"
     }
+    
+    // 하단 탭바 높이
     static var TAB_BAR_HEIGHT: CGFloat {
         return 80
+    }
+    
+    // 메모 셀 높이
+    static var TABLEVIEW_CELL_HEIGHT: CGFloat {
+        return 50
     }
 }
 
@@ -23,17 +32,15 @@ class ViewController: UIViewController {
         tb.delegate = self
         tb.dataSource = self
         tb.translatesAutoresizingMaskIntoConstraints = false
+        tb.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         return tb
     }()
     
-    private lazy var tabbar: UITabBar = {
-        let tbb = UITabBar()
-        tbb.frame = .zero
-        tbb.backgroundColor = .red
+    private var tabbar: CustomTabbar = {
+        let tbb = CustomTabbar()
         tbb.translatesAutoresizingMaskIntoConstraints = false
         return tbb
     }()
-    
     
     override func viewDidLoad() {
         view.backgroundColor = .white
@@ -56,7 +63,6 @@ class ViewController: UIViewController {
         alertController.addTextField { textField in
             textField.placeholder = "입력"
             textField.textAlignment = .center
-            textField.addConstraint(textField.heightAnchor.constraint(equalToConstant: 100))
         }
         
         let okAction = UIAlertAction(title: "추가하기",
@@ -95,9 +101,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constant.TABLEVIEW_CELL_HEIGHT
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier,
+                                                       for: indexPath) as? CustomTableViewCell
+        else { return UITableViewCell() }
+        cell.configure()
+        return cell
     }
     
 }
