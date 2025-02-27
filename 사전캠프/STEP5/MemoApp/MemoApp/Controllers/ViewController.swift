@@ -94,6 +94,7 @@ final class ViewController: UIViewController {
     
 }
 
+// MARK: TableViewDelegate, DataSource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,7 +128,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
+// MARK: ViewModelDelegate
 extension ViewController: ViewModelDelegate {
     
     func didUpdatedMemoList() {
