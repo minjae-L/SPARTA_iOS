@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Constant {
     
@@ -21,12 +22,12 @@ enum Constant {
     
     // 메모 셀 높이
     static var TABLEVIEW_CELL_HEIGHT: CGFloat {
-        return 50
+        return UITableView.automaticDimension
     }
     
     // Cell Label Constraint
     static var CELL_LABEL_CONSTRAINT: (top: CGFloat, bottom: CGFloat, leading: CGFloat, trailing: CGFloat) {
-        return (top: 10, bottom: -10, leading: 20, trailing: -20)
+        return (top: 20, bottom: -20, leading: 20, trailing: -20)
     }
     
     // Custom Tabbar Label top Constraint

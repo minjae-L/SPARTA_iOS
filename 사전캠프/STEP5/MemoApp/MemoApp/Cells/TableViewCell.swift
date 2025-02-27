@@ -15,6 +15,7 @@ final class CustomTableViewCell: UITableViewCell {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textAlignment = .left
+        lb.numberOfLines = 0
         return lb
     }()
     
