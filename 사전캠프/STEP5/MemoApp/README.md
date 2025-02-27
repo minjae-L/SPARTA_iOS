@@ -14,6 +14,7 @@
 - Tabbar은 왼,오는 superView에 맞게, 아래는 superView의 bottomAnchor, 위는 설정없이 높이 80 설정
 - 상단 네비바의 우측 추가버튼은 SF symbols에서 가져온 버튼모양
 - 추가버튼 클릭 시 AlertController 표시, AlertController는 TextField가 추가되어있다.
+- TableViewCell의 Label Constraint 설정
 
 
 ## 개발 환경
