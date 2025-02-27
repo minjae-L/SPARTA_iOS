@@ -122,7 +122,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self?.viewModel.removeMemo(index: indexPath.row)
             self?.tableView.deleteRows(at: [indexPath], with: .right)
             self?.tableView.endUpdates()
-            completion(true)
+           
         }
         action.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [action])
@@ -135,6 +135,7 @@ extension ViewController: ViewModelDelegate {
     
     func didUpdatedMemoList() {
         DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
             guard let count = self?.viewModel.memoCount else { return }
             self?.tabbar.fetchCount(count: count)
         }
