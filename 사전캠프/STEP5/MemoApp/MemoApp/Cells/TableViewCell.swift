@@ -24,10 +24,10 @@ class CustomTableViewCell: UITableViewCell {
     
     private func configureLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constant.CELL_LABEL_CONSTRAINT.leading),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constant.CELL_LABEL_CONSTRAINT.trailing),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constant.CELL_LABEL_CONSTRAINT.top),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constant.CELL_LABEL_CONSTRAINT.bottom)
             
         ])
     }
@@ -41,7 +41,7 @@ class CustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure() {
-        self.titleLabel.text = "hi"
+    func configure(model: MemoList) {
+        self.titleLabel.text = model.detail
     }
 }
