@@ -35,6 +35,11 @@ enum Constant {
     }
 }
 
-struct MemoList {
+enum UserDefaultsKey: String {
+    case memoList
+}
+
+struct MemoList: Codable {
     let detail: String
 }
+
