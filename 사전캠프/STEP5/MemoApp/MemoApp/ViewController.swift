@@ -52,7 +52,22 @@ class ViewController: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        print("add")
+        let alertController = UIAlertController(title: "추가", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = "입력"
+            textField.textAlignment = .center
+            textField.addConstraint(textField.heightAnchor.constraint(equalToConstant: 100))
+        }
+        
+        let okAction = UIAlertAction(title: "추가하기",
+                                     style: .default) { done in
+            print(alertController.textFields?[0].text ?? "")
+        }
+        let cancelAction = UIAlertAction(title: "취소",
+                                         style: .cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     private func addViews() {
