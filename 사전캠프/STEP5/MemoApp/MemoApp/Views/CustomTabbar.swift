@@ -33,6 +33,7 @@ class CustomTabbar: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        self.backgroundColor = .white
         addViews()
         configureLayout()
     }

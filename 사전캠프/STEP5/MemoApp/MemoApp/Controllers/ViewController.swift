@@ -15,6 +15,7 @@ final class ViewController: UIViewController {
         self.viewModel = ViewModel()
         viewModel.delegate = self
         self.tabbar.translatesAutoresizingMaskIntoConstraints = false
+        self.tabbar.fetchCount(count: viewModel.memoCount)
     }
     
     private var viewModel: ViewModel!
