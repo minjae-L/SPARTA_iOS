@@ -12,6 +12,7 @@ class CustomTabbar: UIView {
     private var label: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = "0 개의 메모"
         return lb
     }()
     
@@ -22,7 +23,7 @@ class CustomTabbar: UIView {
     private func configureLayout() {
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10)
+            label.topAnchor.constraint(equalTo: self.topAnchor, constant: Constant.TAB_BAR_LABEL_TOP_CONSTRAINT)
         ])
     }
     
