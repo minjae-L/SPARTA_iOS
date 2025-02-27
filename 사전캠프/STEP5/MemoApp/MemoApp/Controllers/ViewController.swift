@@ -118,8 +118,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
                                         title: "삭제") { [weak self] (action, view, completion) in
-            print("삭제")
+            self?.tableView.beginUpdates()
             self?.viewModel.removeMemo(index: indexPath.row)
+            self?.tableView.deleteRows(at: [indexPath], with: .right)
+            self?.tableView.endUpdates()
             completion(true)
         }
         action.backgroundColor = .red
@@ -133,7 +135,6 @@ extension ViewController: ViewModelDelegate {
     
     func didUpdatedMemoList() {
         DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
             guard let count = self?.viewModel.memoCount else { return }
             self?.tabbar.fetchCount(count: count)
         }
